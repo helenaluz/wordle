@@ -5,3 +5,17 @@
 .letraErrada {
   color: yellow;
 }
+
+.container {
+    max-width: 30rem; /* Largura máxima para desktop */
+    min-width: 10rem; /* Largura mínima para garantir que o conteúdo seja exibido corretamente */
+    width: 18rem; /* Largura padrão para dispositivos móveis */
+    margin: 0 auto; /* Centralizar horizontalmente */
+}
+
+/* Media query para dispositivos com largura de tela maior que 768px (tamanho de um tablet) */
+@media (min-width: 768px) {
+    .container {
+        width: 30rem; /* Largura para desktop */
+    }
+}
