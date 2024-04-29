@@ -8,7 +8,7 @@ var palavras = [
     "papel",
     "trigo",
     "tecla",
-    "creme"
+    "creme",
 ];
 var certo = palavras[Math.floor(Math.random() * 10)].split("");
 var tentativas = 0;
@@ -22,9 +22,10 @@ function juntaTudo() {
         if (validacaoPalavra(palavraArray)) {
             var index = avaliaPalavra(palavraArray, certo);
             tentativas++;
+            atualizarContador(tentativas);
+            resultadoElement.innerHTML = imprimePalavra(palavraArray, index);
             acertou(index, enviarElement);
             tentativasAcabou(tentativas, enviarElement);
-            resultadoElement.innerHTML = imprimePalavra(palavraArray, index);
         }
     }
     else {
@@ -96,3 +97,9 @@ function tentativasAcabou(tentou, botao) {
         botao.disabled = true;
     }
 }
+function atualizarContador(valor) {
+    document.getElementById("tentativas").innerText = "Tentativas: " + valor;
+}
+document.addEventListener("DOMContentLoaded", function () {
+    atualizarContador(tentativas);
+});
